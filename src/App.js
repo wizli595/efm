@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
+// import "./App.css";
+import Covid from "./components/covid";
+import BookStor from "./components/bookStor";
+import FormExm from "./components/formExm";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/navbar";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Covid />} />
+          <Route exact path="/calc" element={<FormExm />} />
+          <Route exact path="/book" element={<BookStor />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
