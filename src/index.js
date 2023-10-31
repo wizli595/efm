@@ -3,10 +3,11 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import reducer from "./components/feature/reducer";
+// import reducer from "./components/feature/reducer";
 import { legacy_createStore } from "redux";
 import { Provider } from "react-redux";
-const stor = legacy_createStore(reducer);
+import reducerOrd from "./components/tpSynthese/reducerOrd";
+const stor = legacy_createStore(reducerOrd);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
